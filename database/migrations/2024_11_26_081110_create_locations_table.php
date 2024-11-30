@@ -21,7 +21,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('stopage', function(Blueprint $table){
+        Schema::create('company_location', function(Blueprint $table){
             $table->id();
             $table->foreignIdFor(Company::class);
             $table->foreignIdFor(Location::class);
@@ -34,5 +34,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('locations');
+        Schema::dropIfExists('stopage');
     }
 };
