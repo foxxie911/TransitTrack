@@ -16,8 +16,6 @@ return new class extends Migration
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
             $table->string('location_name')->unique();
-            $table->float('latitude');
-            $table->float('longitude');
             $table->timestamps();
         });
 
@@ -34,6 +32,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('locations');
-        Schema::dropIfExists('stopage');
+        Schema::dropIfExists('company_location');
     }
 };

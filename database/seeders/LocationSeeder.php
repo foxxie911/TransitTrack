@@ -17,17 +17,37 @@ class LocationSeeder extends Seeder
         $locations = [
             [
                 'location_name' => 'rampura',
-                'latitude' => 23.762810,
-                'longitude' => 90.420163,
             ],
             [
                 'location_name' => 'hajipara',
-                'latitude' => 23.758155,
-                'longitude' => 90.417634,
+            ],
+            [
+                'location_name' => 'gulistan',
+            ],
+            [
+                'location_name' => 'uttara',
+            ],
+            [
+                'location_name' => 'mirpur 10',
+            ],
+            [
+                'location_name' => 'mirpur 11',
+            ],
+            [
+                'location_name' => 'mohakhali',
+            ],
+            [
+                'location_name' => 'kuril',
+            ],
+            [
+                'location_name' => 'tejgaon',
+            ],
+            [
+                'location_name' => 'bijoy sarani',
             ]
         ];
 
-        foreach ($locations as $location){
+        foreach ($locations as $location) {
             Location::create($location);
         }
     }

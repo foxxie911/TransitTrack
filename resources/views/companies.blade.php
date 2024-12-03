@@ -41,7 +41,7 @@
                                             style="text-decoration-line: none;">
                                             <li class="list-group-item"
                                                 style="background-color: rgba(27, 28, 30, 0.3); color: whitesmoke">
-                                                {{$company -> company_name}}
+                                                {{ ucfirst($company -> company_name)}}
                                             </li>
                                         </a>
                                     </ul>

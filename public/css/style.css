@@ -82,6 +82,9 @@ h2 {
     font-weight: 700;
     text-transform: capitalize;
 }
+h3{
+    color: whitesmoke
+}
 h4 {
     color: var(--primary_color);
     font-size: 27px;

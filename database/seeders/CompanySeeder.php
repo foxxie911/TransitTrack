@@ -8,6 +8,17 @@ use Illuminate\Database\Seeder;
 
 class CompanySeeder extends Seeder
 {
+    public function tarloc(): array
+    {
+        $target_location = [];
+
+        for ($i = 0; $i <= 5; $i++) {
+            array_push($target_location, random_int(1, 10));
+            // $target_location + random_int(1, 10);
+        }
+
+        return $target_location;
+    }
     /**
      * Run the database seeds.
      */
@@ -15,18 +26,29 @@ class CompanySeeder extends Seeder
     {
         $companies = [
             [
-                'company_name' => 'osim',
+                'company_name' => 'achim',
             ],
             [
                 'company_name' => "rajdhani",
             ],
             [
                 'company_name' => 'bondhon',
+            ],
+            [
+                'company_name' => 'anabil',
+            ],
+            [
+                'company_name' => 'turag',
             ]
         ];
 
         foreach ($companies as $company) {
-            Company::create($company);
+            $target_location = [];
+            for ($i = 0; $i <= 5; $i++) {
+                array_push($target_location, random_int(1, 6));
+            }
+            $new_companies = Company::create($company);
+            $new_companies->locations()->sync($target_location);
         }
     }
 }

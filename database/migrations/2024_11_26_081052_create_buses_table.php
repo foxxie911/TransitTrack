@@ -14,8 +14,10 @@ return new class extends Migration
     {
         Schema::create('buses', function (Blueprint $table) {
             $table->id();
-            $table->string('plate_no')->unique();
+            $table->string('plate_no');
             $table->foreignIdFor(Company::class);
+            $table->double('latitude');
+            $table->double('longitude');
             $table->timestamps();
         });
     }
