@@ -63,11 +63,21 @@
                         </script>
                         <div id="map">
                             <script>
-                                var map = L.map('map').setView([23.620399, 90.499992], 15);
+                                var map = L.map('map').setView([23.754742, 90.394057], 10);
                                 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                                     maxZoom: 19,
                                     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                                 }).addTo(map);
+                                // var buses = JSON.parse('{{!! $buses !!}}');
+                                var buses = @json($buses);
+                                // console.log(buses);
+                                buses.forEach(buses => {
+                                    var lat = buses.latitude;
+                                    var lon = buses.longitude;
+                                    // console.log(lat);
+                                    // console.log(lon);
+                                    var marker = L.marker([lat, lon]).addTo(map);
+                                });
                                 var marker = L.marker([23.620399, 90.499992]).addTo(map);
                                 marker.bindPopup("<b>Hello world!</b><br>I am a popup.");
                             </script>

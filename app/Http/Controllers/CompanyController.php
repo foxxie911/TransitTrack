@@ -15,10 +15,10 @@ class CompanyController extends Controller
             'to' => 'required',
 
         ]);
-        $from = request('from');
-        $to = request('to');
+        $from = strtolower(request('from'));
+        $to = strtolower(request('to'));
         $locations = Location::with('companies')
-            ->whereIn('location_name', [request('from'), request('to')])
+            ->whereIn('location_name', [$from, $to])
             ->get();
         $companies = array();
         foreach ($locations as $location) {

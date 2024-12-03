@@ -14,6 +14,7 @@ class BusController extends Controller
         return view('buses', [
             'locations' => $locations,
             'company' => $target_company->company_name,
+            'buses' => $target_company->buses,
         ]);
     }
 }
