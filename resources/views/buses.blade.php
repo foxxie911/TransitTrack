@@ -28,8 +28,8 @@
     <div class="trtr_hero_wrapper">
         <div class="trtr_hero_details container">
             <h1 class="h1"
-                style="text-align: center; font-weight: 600;">
-                {{ $company }}
+                style="text-align: center; font-weight: 600; color:whitesmoke; margin-bottom: 60px">
+                {{ ucfirst($company) }}
             </h1>
             <div class="container">
                 <div class="row">
@@ -56,7 +56,6 @@
                             style="color: whitesmoke">
                             Location
                         </h3>
-                        <!-- <p>This is something</p> -->
                         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
                             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
                             crossorigin="">

@@ -5,10 +5,7 @@
                 <div class="text-center">
                     <h1 style="margin-bottom: 0px; color: whitesmoke">Find Your Bus</h1>
                     <p style="color: whitesmoke;">Your Gateway To Seamless Bus Journeys</p>
-                    <!-- <p>Sodales ante facilisis natoques eros quisque suspendisse. Pretium sed sit habitasse cras ium fermentum. Dui semper mi gravida hac vel imperdiet luctus diam tempu.</p> -->
                 </div>
-
-                <!-- Destination Search Form Start -->
                 <div>
                     <div class="trtr_login">
                         <div class="trtr_validation_wrapper">
@@ -48,7 +45,10 @@
                                     @endforeach
                                 </div>
                                 @else
-                                <p class="text-center">Nothing to show</p>
+                                <h2 class="text-center h2"
+                                    style="color: whitesmoke">
+                                    Nothing to show
+                                </h2>
                                 @endif
                             </div>
                         </div>
