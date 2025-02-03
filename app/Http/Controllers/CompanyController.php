@@ -17,9 +17,14 @@ class CompanyController extends Controller
         ]);
         $from = strtolower(request('from'));
         $to = strtolower(request('to'));
-        $locations = Location::with('companies')
-            ->whereIn('location_name', [$from, $to])
-            ->get();
+        if (Location::where('location_name', $from)-> exists() && Location::where('location_name', $to)->exists()) {
+            $locations = Location::with('companies')
+                ->whereIn('location_name', [$from, $to])
+                ->get();
+        }
+        else {
+            $locations = [];
+        }
         $companies = array();
         foreach ($locations as $location) {
             // $companies = $location->companies->pluck('company_name');

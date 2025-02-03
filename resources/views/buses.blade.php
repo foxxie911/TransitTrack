@@ -14,8 +14,8 @@
         crossorigin="anonymous" />
     <style>
         #map {
-            height: 300px;
-            width: 600px;
+            height: 35vh;
+            width: 40vw;
             border-radius: 10px;
         }
     </style>
@@ -72,12 +72,19 @@
                                 buses.forEach(buses => {
                                     var lat = buses.latitude;
                                     var lon = buses.longitude;
+                                    var plateNo = buses.plate_no;
+                                    var seat = Math.floor(Math.random() * 20 + 1);
                                     // console.log(lat);
                                     // console.log(lon);
                                     var marker = L.marker([lat, lon]).addTo(map);
+                                    marker.bindPopup("<b>Bus:</b> " + plateNo +
+                                    "<br><b>Latitude:</b> " + lat +
+                                    "<br><b>Longitude:</b> " + lon +
+                                    "<br><b>Seat Left:</b> " + seat
+                                    );
                                 });
-                                var marker = L.marker([23.620399, 90.499992]).addTo(map);
-                                marker.bindPopup("<b>Hello world!</b><br>I am a popup.");
+                                // var marker = L.marker([23.620399, 90.499992]).addTo(map);
+                                // marker.bindPopup("<b>Hello world!</b><br>I am a popup.");
                             </script>
                         </div>
                     </div>
